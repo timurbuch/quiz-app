@@ -6,25 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>Quiz App</h1>
+    <header class="header">
+        <h1 class="header__title">Quiz App</h1>
     </header>
-    <main>
-        <section>a</section>
-        <section>b</section>
-        <section>c</section>
-    </main>
-    <footer>
-        <nav>
-            <ul>
-                <li>home</li>
-                <li>bookmarks</li>
-                <li>create </li>
-                <li>profile</li>
+    <main class="main">
+        <section class="card">
+            <button class="card__bookmark"></button>
+            <h2 class="card__question">What is the meaning of life?</h2>
+            <button class="card__button">Show answer</button>
+            <p class="card__answer card__answer--hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Placeat, natus.</p>
+            <ul class="tags">
+                <li class="tags__item">Happiness</li>
+                <li class="tags__item">Wealth</li>
+                <li class="tags__item">42</li>
             </ul>
+        </section>
+        <section></section>
+        <section></section>
+    </main>
+    <footer class="footer">
+        <nav class="footer__nav">
+            <a class="nav__link" href="">Home</a>
+            <a class="nav__link" href="">Bookmarks</a>
+            <a class="nav__link" href="">Create</a>
+            <a class="nav__link" href="">Profile</a>
         </nav>
     </footer>
 </body>
