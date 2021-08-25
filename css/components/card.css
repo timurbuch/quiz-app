@@ -1,3 +1,43 @@
 .card {
-    
+    margin-top: 15vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    min-height: 30vh;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow:rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Alegreya', serif;
+}
+.card__bookmark {
+    display: block;
+    align-self: flex-end;
+    width: 5vw;
+    margin-right: 5vw;
+}
+.card__question {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.card__button {
+    display: block;
+    width: 20vw;
+    margin-left: 38vw;
+    margin-right: 38vw;
+    border-radius: 3px;
+}
+.tags {
+    font-size: 0.7rem;
+    display:flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+    margin-bottom: 5vh;
 }
