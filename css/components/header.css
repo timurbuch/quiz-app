@@ -16,6 +16,10 @@
     font-weight: bolder;
     font-size: 2.5rem;
 }
+.header__subsection {
+    text-align: center;
+    padding: 1rem;
+}
 .header__bookmark--flex {
     display: flex;
     flex-direction: row;
