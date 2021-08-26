@@ -12,11 +12,17 @@
     align-items: center;
 }
 .footer__nav {
-    width: 100vw;
+    width: 88vw;
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
     gap: 2rem;
+}
+.footer__divider {
+    height:3vh;
+    width: 1px;
+    background-color: black;
+    opacity: 0.5;
 }
 .nav__link a img{
     object-fit: cover;
