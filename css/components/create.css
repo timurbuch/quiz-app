@@ -1,0 +1,12 @@
+label {
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    background-color: white;
+    
+    
+    
+}
+text-area {
+    border-radius: 1rem;
+}
