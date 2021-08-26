@@ -3,6 +3,7 @@
     margin-left: 3vw;
     margin-right: 3vw;
     min-height: 25vh;
+    padding-top: 3vh;
     border-radius: 1rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     position: relative;
@@ -15,7 +16,7 @@
 .card__bookmark {
     position: absolute;
     background-color: black;
-    top: -30px;
+    top: -20px;
     right: 10px;
     display: block;
     align-self: flex-end;

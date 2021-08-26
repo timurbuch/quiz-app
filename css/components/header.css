@@ -14,4 +14,16 @@
 .header__title {
     text-align: center;
     font-weight: bolder;
+    font-size: 2.5rem;
+}
+.header__bookmark--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+.header__img{
+    object-fit: cover;
+    height: 7vh;
+    width: 7vw;
 }
