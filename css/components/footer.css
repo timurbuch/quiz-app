@@ -12,7 +12,7 @@
     align-items: center;
 }
 .footer__nav {
-    width: 88vw;
+    width: 85vw;
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
