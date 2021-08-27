@@ -1,5 +1,5 @@
 .input__button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -8,7 +8,7 @@
   border-radius: 1rem;
 }
 .card__button {
-background-color: #4CAF50; /* Green */
+  background-color: #4caf50;
   border: none;
   color: white;
   text-align: center;
