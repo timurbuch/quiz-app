@@ -1,23 +1,25 @@
 //Section Headers
 
-const homeHeader = document.getElementById('home--header')
-const bookmarkHeader = document.getElementById('bookmark--header')
-const createHeader = document.getElementById('create--header')
+const homeHeader = document.querySelector('#header--home')
+const bookmarkHeader = document.querySelector('#header--bookmark')
+const createHeader = document.querySelector('#header--create')
+
+console.log(bookmarkHeader)
 //const profileHeader= document.getElementById('profile--header')
 
 //Main Sections
 
-const homeMain = document.getElementById('home')
-const bookmarkMain = document.getElementById('bookmark')
-const createMain = document.getElementById('create')
+const homeMain = document.querySelector('#home')
+const bookmarkMain = document.querySelector('#bookmark')
+const createMain = document.querySelector('#create')
 //const ProfileMain = document.getElementById('profile)
 
 // Buttons
 
-const homeButton = document.getElementById('home--btn')
-const bookmarkButton = document.getElementById('bookmark--btn')
-const createButton = document.getElementById('create--btn')
-const profileButton = document.getElementById('profile--btn')
+const homeButton = document.querySelector('#home--btn')
+const bookmarkButton = document.querySelector('#bookmark--btn')
+const createButton = document.querySelector('#create--btn')
+const profileButton = document.querySelector('#profile--btn')
 
 //Events
 
