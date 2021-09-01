@@ -4,7 +4,6 @@ const homeHeader = document.querySelector('#header--home')
 const bookmarkHeader = document.querySelector('#header--bookmark')
 const createHeader = document.querySelector('#header--create')
 
-console.log(bookmarkHeader)
 //const profileHeader= document.getElementById('profile--header')
 
 //Main Sections
@@ -20,6 +19,8 @@ const homeButton = document.querySelector('#home--btn')
 const bookmarkButton = document.querySelector('#bookmark--btn')
 const createButton = document.querySelector('#create--btn')
 const profileButton = document.querySelector('#profile--btn')
+
+const answerButtons = document.querySelectorAll('.card__button')
 
 //Events
 
@@ -64,3 +65,15 @@ createButton.addEventListener('click', event => {
   //profileMain.classList.add('main--hidden')
   console.log('Get creative')
 })
+
+//Toogle Answer
+for (let i = 0; i < answerButtons.length; i++)
+  answerButtons[i].addEventListener('click', () => {
+    answerButtons[i].nextElementSibling.classList.toggle('card__answer--hidden')
+    answerButtons[i].classList.toggle('hide__button')
+    if (answerButtons[i].innerText === 'Show answer') {
+      answerButtons[i].innerText = 'Hide answer'
+    } else {
+      answerButtons[i].innerText = 'Show answer'
+    }
+  })
