@@ -1,7 +1,8 @@
-@import "base.css";
-@import "components/card.css";
-@import "components/header.css";
-@import "components/footer.css";
-@import "components/main.css";
-@import "components/buttons.css";
-@import "components/create.css";
+@import 'base.css';
+@import 'components/card.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/main.css';
+@import 'components/buttons.css';
+@import 'components/create.css';
+@import 'components/nav.css';
