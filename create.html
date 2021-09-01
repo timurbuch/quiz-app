@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create a new question</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Questrial&display=swap"
-        rel="stylesheet">
-    <link rel="icon" href="/images/head-question-outline.svg">
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/head-question-outline.svg" />
+  </head>
 
-<body>
-    <header class="header">
-        <h2 class="header__subsection">Create your own question</h2>
+  <body>
+    <header class="header header--hidden" id="header--create">
+      <h2 class="header__subsection">Create your own question</h2>
     </header>
-    <main class="main main__input">
-        <div class="main__input-flex-wrapper">
-            <label for="question">Question:</label>
-            <textarea name="question" id="question" cols="30" rows="4">What does the fox say?</textarea>
-            <label for="answer">Answer:</label>
-            <textarea name="answer" id="answer" cols="30" rows="4">Ring-ding-ding-ding-dingeringeding!</textarea>
-            <label for="tags">Put your tags here:</label>
-            <textarea name="tags" id="tag" cols="30" rows="2">e.g. trivial, sports, history</textarea>
-            <button class="input__button">Submit your question</button>
-        </div>
-
-
+    <main class="main main__input main--hidden" id="create">
+      <div class="main__input-flex-wrapper">
+        <label for="question">Question:</label>
+        <textarea name="question" id="question" cols="30" rows="4">
+What does the fox say?</textarea
+        >
+        <label for="answer">Answer:</label>
+        <textarea name="answer" id="answer" cols="30" rows="4">
+Ring-ding-ding-ding-dingeringeding!</textarea
+        >
+        <label for="tags">Put your tags here:</label>
+        <textarea name="tags" id="tag" cols="30" rows="2">
+e.g. trivial, sports, history</textarea
+        >
+        <button class="input__button">Submit your question</button>
+      </div>
     </main>
     <footer class="footer">
-        <nav class="footer__nav">
-            <a class="nav__link" href="/index.html"><img src="images/home.svg" aria-label="Home"></a>
-            <div class="footer__divider"></div>
-            <a class="nav__link" href="/bookmark.html"><img src="images/bookmark.svg" aria-label="Bookmark"></a>
-            <div class="footer__divider"></div>
-            <a class="nav__link" href="create.html"><img src="images/pencil.svg" alt="Create new Card"></a>
-            <div class="footer__divider"></div>
-            <a class="nav__link" href=""><img src="images/profile.svg" alt="Profile"></a>
-        </nav>
+      <nav class="footer__nav">
+        <a class="nav__link" href="/index.html"
+          ><img src="images/home.svg" aria-label="Home"
+        /></a>
+        <div class="footer__divider"></div>
+        <a class="nav__link" href="/bookmark.html"
+          ><img src="images/bookmark.svg" aria-label="Bookmark"
+        /></a>
+        <div class="footer__divider"></div>
+        <a class="nav__link" href="create.html"
+          ><img src="images/pencil.svg" alt="Create new Card"
+        /></a>
+        <div class="footer__divider"></div>
+        <a class="nav__link" href=""
+          ><img src="images/profile.svg" alt="Profile"
+        /></a>
+      </nav>
     </footer>
-</body>
-
+  </body>
 </html>

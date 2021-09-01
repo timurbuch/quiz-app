@@ -1,17 +1,20 @@
 .main {
-    min-height: 100vh;
-    padding-top: 8vh;
-    padding-bottom: 15vh;
-    background-color: lightgrey;
-    font-family: 'Alegreya', serif;;
+  min-height: 100vh;
+  padding-top: 8vh;
+  padding-bottom: 15vh;
+  background-color: lightgrey;
+  font-family: 'Alegreya', serif;
 }
 .main__input {
-    padding-top:15vh;
+  padding-top: 15vh;
 }
 .main__input-flex-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-left: 5vw;
-    margin-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+.main--hidden {
+  display: none;
 }
