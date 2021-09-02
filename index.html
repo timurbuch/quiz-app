@@ -16,15 +16,31 @@
   </head>
 
   <body>
-    <header class="header">
+    <!-- All the headers -->
+    <header class="header" id="header--home">
       <h1 class="header__title">Riddleroo</h1>
     </header>
-    <main class="main">
+    <header class="header header--hidden" id="header--bookmark">
+      <div class="header__bookmark--flex">
+        <h2 class="header__bookmark">Your favorite questions</h2>
+        <img
+          class="header__img"
+          src="images/bookmark.svg"
+          aria-label="Bookmark"
+        />
+      </div>
+    </header>
+    <header class="header header--hidden" id="header--create">
+      <h2 class="header__subsection">Create your own question</h2>
+    </header>
+
+    <!-- All the Main Sections-->
+    <main class="main" id="home">
       <section class="card">
         <button class="card__bookmark"></button>
         <h2 class="card__question">What is the meaning of life?</h2>
         <button class="card__button">Show answer</button>
-        <p class="card__answer card__answer--hidden" hidden>42</p>
+        <p class="card__answer card__answer--hidden">42</p>
         <ul class="tags">
           <li class="tags__item">Philosophy</li>
           <li class="tags__item">Literature</li>
@@ -37,7 +53,7 @@
           Who is the world’s highest paid athlete in 2021?
         </h2>
         <button class="card__button">Show answer</button>
-        <p class="card__answer card__answer--hidden" hidden>Conor Mcgregor</p>
+        <p class="card__answer card__answer--hidden">Conor Mcgregor</p>
         <ul class="tags">
           <li class="tags__item">Sport</li>
           <li class="tags__item">Finance</li>
@@ -48,31 +64,86 @@
         <button class="card__bookmark"></button>
         <h2 class="card__question">How many time zones are there in Russia?</h2>
         <button class="card__button">Show answer</button>
-        <p class="card__answer card__answer--hidden" hidden>11</p>
+        <p class="card__answer card__answer--hidden">11</p>
         <ul class="tags">
           <li class="tags__item">Geography</li>
           <li class="tags__item">Trivia</li>
         </ul>
       </section>
     </main>
+    <main class="main main--hidden" id="bookmark">
+      <section class="card">
+        <button class="card__bookmark"></button>
+        <h2 class="card__question">What is the meaning of life?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">42</p>
+        <ul class="tags">
+          <li class="tags__item">Philosophy</li>
+          <li class="tags__item">Literature</li>
+          <li class="tags__item">Tricky</li>
+        </ul>
+      </section>
+      <section class="card">
+        <button class="card__bookmark"></button>
+        <h2 class="card__question">
+          Who is the world’s highest paid athlete in 2021?
+        </h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">Conor Mcgregor</p>
+        <ul class="tags">
+          <li class="tags__item">Sport</li>
+          <li class="tags__item">Finance</li>
+          <li class="tags__item">Trivia</li>
+        </ul>
+      </section>
+      <section class="card">
+        <button class="card__bookmark"></button>
+        <h2 class="card__question">How many time zones are there in Russia?</h2>
+        <button class="card__button">Show answer</button>
+        <p class="card__answer card__answer--hidden">11</p>
+        <ul class="tags">
+          <li class="tags__item">Geography</li>
+          <li class="tags__item">Trivia</li>
+        </ul>
+      </section>
+    </main>
+    <main class="main main__input main--hidden" id="create">
+      <div class="main__input-flex-wrapper">
+        <label for="question">Question:</label>
+        <textarea name="question" id="question" cols="30" rows="4">
+What does the fox say?</textarea
+        >
+        <label for="answer">Answer:</label>
+        <textarea name="answer" id="answer" cols="30" rows="4">
+Ring-ding-ding-ding-dingeringeding!</textarea
+        >
+        <label for="tags">Put your tags here:</label>
+        <textarea name="tags" id="tag" cols="30" rows="2">
+e.g. trivial, sports, history</textarea
+        >
+        <button class="input__button">Submit your question</button>
+      </div>
+    </main>
+    <!-- Nav Buttons down here-->
     <footer class="footer">
-      <nav class="nav">
-        <a class="nav__link" href="/index.html"
-          ><img src="images/home.svg" aria-label="Home"
-        /></a>
-        <div class="nav__divider"></div>
-        <a class="nav__link" href="/bookmark.html"
-          ><img src="images/bookmark.svg" aria-label="Bookmark"
-        /></a>
-        <div class="nav__divider"></div>
-        <a class="nav__link" href="create.html"
-          ><img src="images/pencil.svg" alt="Create new Card"
-        /></a>
-        <div class="nav__divider"></div>
-        <a class="nav__link" href=""
-          ><img src="images/profile.svg" alt="Profile"
-        /></a>
+      <nav class="footer__nav">
+        <button class="nav__link" id="home--btn">
+          <img src="images/home.svg" aria-label="Home" />
+        </button>
+        <div class="footer__divider"></div>
+        <button class="nav__link" id="bookmark--btn">
+          <img src="images/bookmark.svg" aria-label="Bookmark" />
+        </button>
+        <div class="footer__divider"></div>
+        <button class="nav__link" id="create--btn">
+          <img src="images/pencil.svg" alt="Create new Card" />
+        </button>
+        <div class="footer__divider"></div>
+        <button class="nav__link" id="profile--btn">
+          <img src="images/profile.svg" alt="Profile" />
+        </button>
       </nav>
     </footer>
+    <script src="/index.js"></script>
   </body>
 </html>

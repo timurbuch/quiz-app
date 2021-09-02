@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header header--hidden" id="header--bookmark">
       <div class="header__bookmark--flex">
         <h2 class="header__bookmark">Your favorite questions</h2>
         <img
@@ -26,7 +26,7 @@
         />
       </div>
     </header>
-    <main class="main">
+    <main class="main main--hidden" id="bookmark">
       <section class="card">
         <button class="card__bookmark"></button>
         <h2 class="card__question">What is the meaning of life?</h2>
@@ -63,19 +63,19 @@
       </section>
     </main>
     <footer class="footer">
-      <nav class="nav">
+      <nav class="footer__nav">
         <a class="nav__link" href="/index.html"
           ><img src="images/home.svg" aria-label="Home"
         /></a>
-        <div class="nav_divider"></div>
+        <div class="footer__divider"></div>
         <a class="nav__link" href="/bookmark.html"
           ><img src="images/bookmark.svg" aria-label="Bookmark"
         /></a>
-        <div class="nav__divider"></div>
+        <div class="footer__divider"></div>
         <a class="nav__link" href="create.html"
           ><img src="images/pencil.svg" alt="Create new Card"
         /></a>
-        <div class="nav__divider"></div>
+        <div class="footer__divider"></div>
         <a class="nav__link" href=""
           ><img src="images/profile.svg" alt="Profile"
         /></a>

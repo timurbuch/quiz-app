@@ -1,64 +1,60 @@
 .card {
-    background-color: white;
-    margin-top: 7vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    min-height: 25vh;
-    padding-top: 3vh;
-    border-radius: 1rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: relative;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: 'Alegreya', serif;
+  background-color: white;
+  margin-top: 7vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  min-height: 25vh;
+  padding-top: 3vh;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Alegreya', serif;
 }
 .card__bookmark {
-    position: absolute;
-    background-color: black;
-    top: -20px;
-    right: 10px;
-    display: block;
-    align-self: flex-end;
-    padding:0px;
-    border-color: black;
-    height: 50px;
-    border-style: solid;
-    border-width: 15px;
-    border-bottom-color: transparent; 
-    border-radius: 5px;
-    background-color: transparent;
+  position: absolute;
+  background-color: black;
+  top: -20px;
+  right: 10px;
+  display: block;
+  align-self: flex-end;
+  padding: 0px;
+  border-color: black;
+  height: 50px;
+  border-style: solid;
+  border-width: 15px;
+  border-bottom-color: transparent;
+  border-radius: 5px;
+  background-color: transparent;
 }
 .card__question {
-    text-align: center;
-    font-size: 1.4rem;
-    text-shadow: 0px 3px 2px rgba(0,0,0,0.11);
-    font-weight: 400;
+  text-align: center;
+  font-size: 1.4rem;
+  text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.11);
+  font-weight: 400;
 }
-.card__button {
-    display: block;
-    width: 20vw;
-    margin-left: 38vw;
-    margin-right: 38vw;
-    border-radius: 3px;
+
+.card__answer--hidden {
+  display: none;
 }
 .tags {
-    font-size: 0.7rem;
-    display:flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 3vw;
-    padding-inline-start: 0;
-    padding-left: 5vw;
-    margin-bottom: 5vh;
-}   
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 3vw;
+  padding-inline-start: 0;
+  padding-left: 5vw;
+  margin-bottom: 5vh;
+}
 .tags__item {
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 5px;
-    border: 1px solid grey;
-}   
-
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid grey;
+}

@@ -1,5 +1,5 @@
 .input__button {
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -8,10 +8,28 @@
   border-radius: 1rem;
 }
 .card__button {
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   border-radius: 1rem;
+  display: block;
+  width: 20vw;
+  margin-left: 38vw;
+  margin-right: 38vw;
+  border-radius: 3px;
+}
+.hide__button {
+  background-color: tomato;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 1rem;
+  display: block;
+  width: 20vw;
+  margin-left: 38vw;
+  margin-right: 38vw;
+  border-radius: 3px;
 }
