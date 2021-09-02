@@ -22,49 +22,29 @@ function getEl(selector) {
 }
 
 function hideAll() {
-  homeHeader.classList.add('header--hidden')
-  bookmarkHeader.classList.add('header--hidden')
-  createHeader.classList.add('header--hidden')
-  profileHeader.classList.add('header--hidden')
+  const headerElArray = document.querySelectorAll('.header')
+  headerElArray.forEach((headerEl, index) => {
+    headerEl.classList.add('header--hidden')
+  })
 
-  homeMain.classList.add('main--hidden')
-  bookmarkMain.classList.add('main--hidden')
-  createMain.classList.add('main--hidden')
-  profileMain.classList.add('main--hidden')
+  const mainElArray = document.querySelectorAll('.main')
+  mainElArray.forEach((mainEl, index) => {
+    mainEl.classList.add('main--hidden')
+  })
 }
 
-// Events
-homeButton.addEventListener('click', event => {
-  hideAll()
-  homeHeader.classList.remove('header--hidden')
-  homeMain.classList.remove('main--hidden')
+function addButtonEventListener(name) {
+  getEl(`#${name}--btn`).addEventListener('click', () => {
+    hideAll()
+    getEl(`#header--${name}`).classList.remove('header--hidden')
+    getEl(`#${name}`).classList.remove('main--hidden')
+  })
+}
 
-  console.log('Welcome home')
-})
-
-bookmarkButton.addEventListener('click', event => {
-  hideAll()
-  bookmarkHeader.classList.remove('header--hidden')
-  bookmarkMain.classList.remove('main--hidden')
-
-  console.log('Best questions')
-})
-
-createButton.addEventListener('click', event => {
-  hideAll()
-  createHeader.classList.remove('header--hidden')
-  createMain.classList.remove('main--hidden')
-
-  console.log('Get creative')
-})
-
-profileButton.addEventListener('click', event => {
-  hideAll()
-  profileHeader.classList.remove('header--hidden')
-  profileMain.classList.remove('main--hidden')
-
-  console.log('Profile')
-})
+addButtonEventListener('home')
+addButtonEventListener('bookmark')
+addButtonEventListener('create')
+addButtonEventListener('profile')
 
 // -----------------------------------------------
 
@@ -72,6 +52,7 @@ function getElAll(selector) {
   const el = document.querySelectorAll(selector)
   return el
 }
+
 //Card Bookmarks
 const bookmarks = getElAll('.card__bookmark')
 //console.log(bookmarks)
