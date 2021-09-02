@@ -20,6 +20,11 @@ const bookmarkButton = document.querySelector('#bookmark--btn')
 const createButton = document.querySelector('#create--btn')
 const profileButton = document.querySelector('#profile--btn')
 
+//Card Bookmarks
+const bookmarks = document.querySelectorAll('.card__bookmark')
+console.log(bookmarks)
+
+//Answerbuttons
 const answerButtons = document.querySelectorAll('.card__button')
 
 //Events
@@ -67,7 +72,7 @@ createButton.addEventListener('click', event => {
 })
 
 //Toogle Answer
-for (let i = 0; i < answerButtons.length; i++)
+for (let i = 0; i < answerButtons.length; i++) {
   answerButtons[i].addEventListener('click', () => {
     answerButtons[i].nextElementSibling.classList.toggle('card__answer--hidden')
     answerButtons[i].classList.toggle('hide__button')
@@ -77,3 +82,11 @@ for (let i = 0; i < answerButtons.length; i++)
       answerButtons[i].innerText = 'Show answer'
     }
   })
+}
+
+//Toogle Bookmarks
+for (let i = 0; i < bookmarks.length; i++) {
+  bookmarks[i].addEventListener('click', () => {
+    bookmarks[i].classList.toggle('card__bookmark--inactive')
+  })
+}
