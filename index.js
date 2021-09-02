@@ -1,75 +1,83 @@
-//Section Headers
+// Section Headers
+const homeHeader = getEl('#header--home')
+const bookmarkHeader = getEl('#header--bookmark')
+const createHeader = getEl('#header--create')
+const profileHeader = getEl('#header--profile')
 
-const homeHeader = document.querySelector('#header--home')
-const bookmarkHeader = document.querySelector('#header--bookmark')
-const createHeader = document.querySelector('#header--create')
-
-//const profileHeader= document.getElementById('profile--header')
-
-//Main Sections
-
-const homeMain = document.querySelector('#home')
-const bookmarkMain = document.querySelector('#bookmark')
-const createMain = document.querySelector('#create')
-//const ProfileMain = document.getElementById('profile)
+// Main Sections
+const homeMain = getEl('#home')
+const bookmarkMain = getEl('#bookmark')
+const createMain = getEl('#create')
+const profileMain = getEl('#profile')
 
 // Buttons
+const homeButton = getEl('#home--btn')
+const bookmarkButton = getEl('#bookmark--btn')
+const createButton = getEl('#create--btn')
+const profileButton = getEl('#profile--btn')
 
-const homeButton = document.querySelector('#home--btn')
-const bookmarkButton = document.querySelector('#bookmark--btn')
-const createButton = document.querySelector('#create--btn')
-const profileButton = document.querySelector('#profile--btn')
+function getEl(selector) {
+  const el = document.querySelector(selector)
+  return el
+}
 
-//Card Bookmarks
-const bookmarks = document.querySelectorAll('.card__bookmark')
-console.log(bookmarks)
+function hideAll() {
+  homeHeader.classList.add('header--hidden')
+  bookmarkHeader.classList.add('header--hidden')
+  createHeader.classList.add('header--hidden')
+  profileHeader.classList.add('header--hidden')
 
-//Answerbuttons
-const answerButtons = document.querySelectorAll('.card__button')
+  homeMain.classList.add('main--hidden')
+  bookmarkMain.classList.add('main--hidden')
+  createMain.classList.add('main--hidden')
+  profileMain.classList.add('main--hidden')
+}
 
-//Events
-
+// Events
 homeButton.addEventListener('click', event => {
+  hideAll()
   homeHeader.classList.remove('header--hidden')
   homeMain.classList.remove('main--hidden')
 
-  bookmarkHeader.classList.add('header--hidden')
-  createHeader.classList.add('header--hidden')
-  // profileHeader.classList.add('header--hidden')
-
-  bookmarkMain.classList.add('main--hidden')
-  createMain.classList.add('main--hidden')
-  //profileMain.classList.add('main--hidden')
   console.log('Welcome home')
 })
 
 bookmarkButton.addEventListener('click', event => {
+  hideAll()
   bookmarkHeader.classList.remove('header--hidden')
   bookmarkMain.classList.remove('main--hidden')
 
-  homeHeader.classList.add('header--hidden')
-  createHeader.classList.add('header--hidden')
-  // profileHeader.classList.add('header--hidden')
-
-  homeMain.classList.add('main--hidden')
-  createMain.classList.add('main--hidden')
-  //profileMain.classList.add('main--hidden')
   console.log('Best questions')
 })
 
 createButton.addEventListener('click', event => {
+  hideAll()
   createHeader.classList.remove('header--hidden')
   createMain.classList.remove('main--hidden')
 
-  homeHeader.classList.add('header--hidden')
-  bookmarkHeader.classList.add('header--hidden')
-  // profileHeader.classList.add('header--hidden')
-
-  homeMain.classList.add('main--hidden')
-  bookmarkMain.classList.add('main--hidden')
-  //profileMain.classList.add('main--hidden')
   console.log('Get creative')
 })
+
+profileButton.addEventListener('click', event => {
+  hideAll()
+  profileHeader.classList.remove('header--hidden')
+  profileMain.classList.remove('main--hidden')
+
+  console.log('Profile')
+})
+
+// -----------------------------------------------
+
+function getElAll(selector) {
+  const el = document.querySelectorAll(selector)
+  return el
+}
+//Card Bookmarks
+const bookmarks = getElAll('.card__bookmark')
+//console.log(bookmarks)
+
+//Answerbuttons
+const answerButtons = getElAll('.card__button')
 
 //Toogle Answer
 for (let i = 0; i < answerButtons.length; i++) {
