@@ -86,17 +86,38 @@ submitButton.addEventListener('click', () => {
   form.reset()
 })
 
-//Toggle Dark Mode
-body = getEl('.body')
-console.log(body)
+// Toggle Dark Mode
+
 darkmodeSwitch = getEl('.darkmode-switch')
+const mainElArray = document.querySelectorAll('.main')
+const headerArray = getElAll('.header')
+const cardArray = getElAll('.card')
+const footer = getEl('.footer')
 
 darkmodeSwitch.addEventListener('change', () => {
   if (darkmodeSwitch.checked) {
-    body.classList.add('dark-mode')
+    mainElArray.forEach((mainEl, index) => {
+      mainEl.classList.add('dark-mode')
+    })
+    headerArray.forEach((header, index) => {
+      header.classList.add('dark-mode')
+    })
+    cardArray.forEach((card, index) => {
+      card.classList.add('dark-mode')
+    })
+    footer.classList.add('dark-mode')
     console.log('dark')
   } else {
-    body.classList.remove('dark-mode')
+    mainElArray.forEach((mainEl, index) => {
+      mainEl.classList.remove('dark-mode')
+    })
+    headerArray.forEach((header, index) => {
+      header.classList.remove('dark-mode')
+    })
+    cardArray.forEach((card, index) => {
+      card.classList.remove('dark-mode')
+    })
+    footer.classList.remove('dark-mode')
     console.log('light')
   }
 })
