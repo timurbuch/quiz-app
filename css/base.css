@@ -9,9 +9,3 @@ html {
 body {
   margin: 0;
 }
-
-.dark-mode {
-  background-color: black !important;
-  color: white !important;
-  border: 1px solid lightgrey;
-}

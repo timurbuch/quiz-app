@@ -76,7 +76,19 @@ for (let i = 0; i < answerButtons.length; i++) {
 // Toogle Bookmarks
 for (let i = 0; i < bookmarks.length; i++) {
   bookmarks[i].addEventListener('click', () => {
-    bookmarks[i].classList.toggle('card__bookmark--inactive')
+    if (
+      bookmarks[i].classList.contains('card__bookmark--dark-mode--active') &&
+      getEl('.card').classList.contains('dark-mode')
+    ) {
+      bookmarks[i].classList.toggle('card__bookmark--inactive')
+      bookmarks[i].classList.toggle('card__bookmark--dark-mode--active')
+    } else if (
+      bookmarks[i].classList.contains('card__bookmark--active') ||
+      bookmarks[i].classList.contains('card__bookmark--inactive')
+    ) {
+      bookmarks[i].classList.toggle('card__bookmark--inactive')
+      bookmarks[i].classList.toggle('card__bookmark--active')
+    }
   })
 }
 // Reset Form
@@ -95,29 +107,25 @@ const cardArray = getElAll('.card')
 const footer = getEl('.footer')
 
 darkmodeSwitch.addEventListener('change', () => {
-  if (darkmodeSwitch.checked) {
-    mainElArray.forEach((mainEl, index) => {
-      mainEl.classList.add('dark-mode')
-    })
-    headerArray.forEach((header, index) => {
-      header.classList.add('dark-mode')
-    })
-    cardArray.forEach((card, index) => {
-      card.classList.add('dark-mode')
-    })
-    footer.classList.add('dark-mode')
-    console.log('dark')
-  } else {
-    mainElArray.forEach((mainEl, index) => {
-      mainEl.classList.remove('dark-mode')
-    })
-    headerArray.forEach((header, index) => {
-      header.classList.remove('dark-mode')
-    })
-    cardArray.forEach((card, index) => {
-      card.classList.remove('dark-mode')
-    })
-    footer.classList.remove('dark-mode')
-    console.log('light')
-  }
+  mainElArray.forEach((mainEl, index) => {
+    mainEl.classList.toggle('dark-mode')
+  })
+  headerArray.forEach((header, index) => {
+    header.classList.toggle('dark-mode')
+  })
+  cardArray.forEach((card, index) => {
+    card.classList.toggle('dark-mode')
+  })
+  footer.classList.toggle('dark-mode')
+  bookmarks.forEach((bookmark, index) => {
+    if (bookmark.classList.contains('card__bookmark--active')) {
+      bookmark.classList.toggle('card__bookmark--dark-mode--active')
+      bookmark.classList.toggle('card__bookmark--active')
+    } else if (
+      bookmark.classList.contains('card__bookmark--dark-mode--active')
+    ) {
+      bookmark.classList.toggle('card__bookmark--dark-mode--active')
+      bookmark.classList.toggle('card__bookmark--active')
+    }
+  })
 })

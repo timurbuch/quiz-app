@@ -39,6 +39,7 @@
   display: inline-block;
   width: 60px;
   height: 34px;
+  background: none;
 }
 
 /* Hide default HTML checkbox */
@@ -74,7 +75,7 @@
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #21f367;
 }
 
 input:focus + .slider {
