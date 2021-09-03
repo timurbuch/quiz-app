@@ -16,7 +16,7 @@
     <script src="/index.js" defer></script>
   </head>
 
-  <body>
+  <body class="body">
     <!-- All the headers -->
     <header class="header" id="header--home">
       <h1 class="header__title">Riddleroo</h1>
@@ -130,9 +130,11 @@ e.g. trivial, sports, history</textarea
         </button>
       </form>
     </main>
-    <main class="main main--hidden" id="profile">
+    <main class="main main__profile main--hidden" id="profile">
+      <h2>Settings</h2>
+      <p>Toggle button to enable dark mode</p>
       <label class="switch">
-        <input type="checkbox" />
+        <input class="darkmode-switch" type="checkbox" />
         <span class="slider round"></span>
       </label>
     </main>

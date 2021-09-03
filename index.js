@@ -85,3 +85,18 @@ submitButton = getEl('.input__button')
 submitButton.addEventListener('click', () => {
   form.reset()
 })
+
+//Toggle Dark Mode
+body = getEl('.body')
+console.log(body)
+darkmodeSwitch = getEl('.darkmode-switch')
+
+darkmodeSwitch.addEventListener('change', () => {
+  if (darkmodeSwitch.checked) {
+    body.classList.add('dark-mode')
+    console.log('dark')
+  } else {
+    body.classList.remove('dark-mode')
+    console.log('light')
+  }
+})
