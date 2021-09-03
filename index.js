@@ -84,5 +84,4 @@ form = document.getElementById('form')
 submitButton = getEl('.input__button')
 submitButton.addEventListener('click', () => {
   form.reset()
-  createButton.click()
 })
