@@ -57,10 +57,10 @@ function getElAll(selector) {
 const bookmarks = getElAll('.card__bookmark')
 //console.log(bookmarks)
 
-//Answerbuttons
+// Answerbuttons
 const answerButtons = getElAll('.card__button')
 
-//Toogle Answer
+// Toogle Answer
 for (let i = 0; i < answerButtons.length; i++) {
   answerButtons[i].addEventListener('click', () => {
     answerButtons[i].nextElementSibling.classList.toggle('card__answer--hidden')
@@ -73,9 +73,16 @@ for (let i = 0; i < answerButtons.length; i++) {
   })
 }
 
-//Toogle Bookmarks
+// Toogle Bookmarks
 for (let i = 0; i < bookmarks.length; i++) {
   bookmarks[i].addEventListener('click', () => {
     bookmarks[i].classList.toggle('card__bookmark--inactive')
   })
 }
+// Reset Form
+form = document.getElementById('form')
+submitButton = getEl('.input__button')
+submitButton.addEventListener('click', () => {
+  form.reset()
+  createButton.click()
+})
