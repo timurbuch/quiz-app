@@ -15,6 +15,13 @@
   margin-left: 5vw;
   margin-right: 5vw;
 }
+
+.main__profile {
+  padding: 10vh 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 .main--hidden {
   display: none;
 }

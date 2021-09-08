@@ -16,7 +16,7 @@
     <script src="/index.js" defer></script>
   </head>
 
-  <body>
+  <body class="body">
     <!-- All the headers -->
     <header class="header" id="header--home">
       <h1 class="header__title">Riddleroo</h1>
@@ -41,7 +41,7 @@
     <!-- All the Main Sections-->
     <main class="main" id="home">
       <section class="card">
-        <button class="card__bookmark"></button>
+        <button class="card__bookmark card__bookmark--inactive"></button>
         <h2 class="card__question">What is the meaning of life?</h2>
         <button class="card__button">Show answer</button>
         <p class="card__answer card__answer--hidden">42</p>
@@ -52,7 +52,7 @@
         </ul>
       </section>
       <section class="card">
-        <button class="card__bookmark"></button>
+        <button class="card__bookmark card__bookmark--inactive"></button>
         <h2 class="card__question">
           Who is the world’s highest paid athlete in 2021?
         </h2>
@@ -65,7 +65,7 @@
         </ul>
       </section>
       <section class="card">
-        <button class="card__bookmark"></button>
+        <button class="card__bookmark card__bookmark--inactive"></button>
         <h2 class="card__question">How many time zones are there in Russia?</h2>
         <button class="card__button">Show answer</button>
         <p class="card__answer card__answer--hidden">11</p>
@@ -77,7 +77,7 @@
     </main>
     <main class="main main--hidden" id="bookmark">
       <section class="card">
-        <button class="card__bookmark"></button>
+        <button class="card__bookmark card__bookmark--active"></button>
         <h2 class="card__question">What is the meaning of life?</h2>
         <button class="card__button">Show answer</button>
         <p class="card__answer card__answer--hidden">42</p>
@@ -88,7 +88,7 @@
         </ul>
       </section>
       <section class="card">
-        <button class="card__bookmark"></button>
+        <button class="card__bookmark card__bookmark--active"></button>
         <h2 class="card__question">
           Who is the world’s highest paid athlete in 2021?
         </h2>
@@ -101,7 +101,7 @@
         </ul>
       </section>
       <section class="card">
-        <button class="card__bookmark"></button>
+        <button class="card__bookmark card__bookmark--active"></button>
         <h2 class="card__question">How many time zones are there in Russia?</h2>
         <button class="card__button">Show answer</button>
         <p class="card__answer card__answer--hidden">11</p>
@@ -125,10 +125,19 @@ Ring-ding-ding-ding-dingeringeding!</textarea
         <textarea name="tags" id="tag" cols="30" rows="2">
 e.g. trivial, sports, history</textarea
         >
-        <button class="input__button">Submit your question</button>
+        <button type="button" class="input__button">
+          Submit your question
+        </button>
       </form>
     </main>
-    <main class="main main--hidden" id="profile">... profile ...</main>
+    <main class="main main__profile main--hidden" id="profile">
+      <h2>Settings</h2>
+      <p>Toggle button to enable dark mode</p>
+      <label class="switch">
+        <input class="darkmode-switch" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+    </main>
 
     <!-- Nav Buttons down here-->
     <footer class="footer">

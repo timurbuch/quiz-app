@@ -76,7 +76,19 @@ for (let i = 0; i < answerButtons.length; i++) {
 // Toogle Bookmarks
 for (let i = 0; i < bookmarks.length; i++) {
   bookmarks[i].addEventListener('click', () => {
-    bookmarks[i].classList.toggle('card__bookmark--inactive')
+    if (
+      bookmarks[i].classList.contains('card__bookmark--dark-mode--active') &&
+      getEl('.card').classList.contains('dark-mode')
+    ) {
+      bookmarks[i].classList.toggle('card__bookmark--inactive')
+      bookmarks[i].classList.toggle('card__bookmark--dark-mode--active')
+    } else if (
+      bookmarks[i].classList.contains('card__bookmark--active') ||
+      bookmarks[i].classList.contains('card__bookmark--inactive')
+    ) {
+      bookmarks[i].classList.toggle('card__bookmark--inactive')
+      bookmarks[i].classList.toggle('card__bookmark--active')
+    }
   })
 }
 // Reset Form
@@ -84,5 +96,36 @@ form = document.getElementById('form')
 submitButton = getEl('.input__button')
 submitButton.addEventListener('click', () => {
   form.reset()
-  createButton.click()
+})
+
+// Toggle Dark Mode
+
+darkmodeSwitch = getEl('.darkmode-switch')
+const mainElArray = document.querySelectorAll('.main')
+const headerArray = getElAll('.header')
+const cardArray = getElAll('.card')
+const footer = getEl('.footer')
+
+darkmodeSwitch.addEventListener('change', () => {
+  mainElArray.forEach((mainEl, index) => {
+    mainEl.classList.toggle('dark-mode')
+  })
+  headerArray.forEach((header, index) => {
+    header.classList.toggle('dark-mode')
+  })
+  cardArray.forEach((card, index) => {
+    card.classList.toggle('dark-mode')
+  })
+  footer.classList.toggle('dark-mode')
+  bookmarks.forEach((bookmark, index) => {
+    if (bookmark.classList.contains('card__bookmark--active')) {
+      bookmark.classList.toggle('card__bookmark--dark-mode--active')
+      bookmark.classList.toggle('card__bookmark--active')
+    } else if (
+      bookmark.classList.contains('card__bookmark--dark-mode--active')
+    ) {
+      bookmark.classList.toggle('card__bookmark--dark-mode--active')
+      bookmark.classList.toggle('card__bookmark--active')
+    }
+  })
 })

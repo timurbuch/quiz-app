@@ -16,13 +16,11 @@
 }
 .card__bookmark {
   position: absolute;
-  background-color: black;
   top: -20px;
   right: 10px;
   display: block;
   align-self: flex-end;
   padding: 0px;
-  border-color: black;
   height: 50px;
   border-style: solid;
   border-width: 15px;
@@ -30,9 +28,13 @@
   border-radius: 5px;
   background-color: transparent;
 }
+.card__bookmark--active {
+  border-color: black;
+  border-bottom-color: transparent;
+}
 .card__bookmark--inactive {
   position: absolute;
-  background-color: lightgrey;
+  background-color: lightslategrey;
   top: -20px;
   right: 10px;
   display: block;
@@ -46,6 +48,7 @@
   border-radius: 5px;
   background-color: transparent;
 }
+
 .card__question {
   text-align: center;
   font-size: 1.4rem;
