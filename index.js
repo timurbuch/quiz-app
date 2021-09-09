@@ -153,10 +153,6 @@ const renderCards = (arr, section) => {
     question.innerText = card.question
   })
 }
-// Render Functions
-
-document.body.onload = renderCards(cards, homeSection)
-document.body.onload = renderCards(bookmarkedCards, bookmarkSection)
 
 // Card Bookmarks
 
@@ -196,10 +192,18 @@ for (let i = 0; i < bookmarks.length; i++) {
     }
   })
 }
-// Reset Form
+// Reset Form and Create new Card on Form submit
 form = document.getElementById('form')
 submitButton = getEl('.input__button')
 submitButton.addEventListener('click', () => {
+  const question = document.getElementById('question').value
+
+  const answer = document.getElementById('answer').value
+  const tags = document.getElementById('tags').value.split(', ')
+  console.log(tags)
+  addQuestion(question, answer, tags)
+  renderCards(cards, homeSection)
+  renderCards(bookmarkedCards, bookmarkSection)
   form.reset()
 })
 
@@ -234,3 +238,8 @@ darkmodeSwitch.addEventListener('change', () => {
     }
   })
 })
+
+// Render Function Calls
+
+document.body.onload = renderCards(cards, homeSection)
+document.body.onload = renderCards(bookmarkedCards, bookmarkSection)
