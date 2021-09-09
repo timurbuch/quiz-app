@@ -53,9 +53,110 @@ function getElAll(selector) {
   return el
 }
 
-//Card Bookmarks
+// Render Card Components
+
+// Card Array
+
+const cards = [
+  {
+    question: 'What is the meaning of life?',
+    answer: '42',
+    showAnswer: false,
+    tags: ['Philophy', 'Literature', 'Tricky'],
+    bookmarked: false,
+  },
+  {
+    question: 'Who is the world’s highest paid athlete in 2021??',
+    answer: 'Conor McGregor',
+    showAnswer: false,
+    tags: ['Sports', 'Finance', 'Trivia'],
+    bookmarked: true,
+  },
+  {
+    question: 'What famous US festival hosted over 350,000 fans in 1969??',
+    answer: 'Woodstock',
+    showAnswer: false,
+    tags: ['Music', 'History'],
+    bookmarked: true,
+  },
+]
+// Create new Card
+
+const addQuestion = (questionText, answerText, tagsList) => {
+  const newQuestion = {
+    question: questionText,
+    answer: answerText,
+    showAnswer: false,
+    tags: tagsList,
+    bookmarked: false,
+  }
+  cards.push(newQuestion)
+}
+
+addQuestion('test', 'test', ['1', '2', '3'])
+
+const getCards = () => {
+  return cards
+}
+
+const bookmarkedCards = cards.filter(card => card.bookmarked)
+console.log(bookmarkedCards)
+
+// Section Variables
+
+const homeSection = document.getElementById('home')
+const bookmarkSection = document.getElementById('bookmark')
+
+// Render Function
+
+const renderCards = (arr, section) => {
+  section.innerHTML = ''
+  arr.forEach(card => {
+    const cardSection = document.createElement('section')
+    cardSection.classList.add('card')
+    console.log(cardSection)
+    const bookmarKButton = document.createElement('button')
+    bookmarKButton.classList.add('card__bookmark')
+    if (card.bookmarked) {
+      bookmarKButton.classList.add('card__bookmark--active')
+    } else {
+      bookmarKButton.classList.add('card__bookmark--inactive')
+    }
+
+    const question = document.createElement('h2')
+    question.classList.add('card__question')
+
+    const answerButton = document.createElement('button')
+    answerButton.classList.add('card__button')
+    answerButton.innerText = 'Show Answer'
+
+    const answer = document.createElement('p')
+    answer.classList.add('card__answer', 'card__answer--hidden')
+    answer.innerText = card.answer
+    const tagList = document.createElement('ul')
+    tagList.classList.add('tags')
+    console.log(card.tags)
+    card.tags.forEach(tag => {
+      const tagsItem = document.createElement('li')
+      tagsItem.classList.add('tags__item')
+      tagsItem.innerText = tag
+      tagList.appendChild(tagsItem)
+    })
+
+    cardSection.appendChild(bookmarKButton)
+    cardSection.appendChild(question)
+    cardSection.appendChild(answerButton)
+    cardSection.appendChild(answer)
+    cardSection.appendChild(tagList)
+    section.appendChild(cardSection)
+
+    question.innerText = card.question
+  })
+}
+
+// Card Bookmarks
+
 const bookmarks = getElAll('.card__bookmark')
-//console.log(bookmarks)
 
 // Answerbuttons
 const answerButtons = getElAll('.card__button')
@@ -91,10 +192,18 @@ for (let i = 0; i < bookmarks.length; i++) {
     }
   })
 }
-// Reset Form
+// Reset Form and Create new Card on Form submit
 form = document.getElementById('form')
 submitButton = getEl('.input__button')
 submitButton.addEventListener('click', () => {
+  const question = document.getElementById('question').value
+
+  const answer = document.getElementById('answer').value
+  const tags = document.getElementById('tags').value.split(', ')
+  console.log(tags)
+  addQuestion(question, answer, tags)
+  renderCards(cards, homeSection)
+  renderCards(bookmarkedCards, bookmarkSection)
   form.reset()
 })
 
@@ -129,3 +238,8 @@ darkmodeSwitch.addEventListener('change', () => {
     }
   })
 })
+
+// Render Function Calls
+
+document.body.onload = renderCards(cards, homeSection)
+document.body.onload = renderCards(bookmarkedCards, bookmarkSection)
