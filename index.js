@@ -80,6 +80,20 @@ const cards = [
     bookmarked: true,
   },
 ]
+// Create new Card
+
+const addQuestion = (questionText, answerText, tagsList) => {
+  const newQuestion = {
+    question: questionText,
+    answer: answerText,
+    showAnswer: false,
+    tags: tagsList,
+    bookmarked: false,
+  }
+  cards.push(newQuestion)
+}
+
+addQuestion('test', 'test', ['1', '2', '3'])
 
 const getCards = () => {
   return cards
