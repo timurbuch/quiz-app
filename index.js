@@ -53,9 +53,100 @@ function getElAll(selector) {
   return el
 }
 
-//Card Bookmarks
+// Render Card Components
+
+// Card Array
+
+const cards = [
+  {
+    question: 'What is the meaning of life?',
+    answer: '42',
+    showAnswer: false,
+    tags: ['Philophy', 'Literature', 'Tricky'],
+    bookmarked: false,
+  },
+  {
+    question: 'Who is the world’s highest paid athlete in 2021??',
+    answer: 'Conor McGregor',
+    showAnswer: false,
+    tags: ['Sports', 'Finance', 'Trivia'],
+    bookmarked: true,
+  },
+  {
+    question: 'What famous US festival hosted over 350,000 fans in 1969??',
+    answer: 'Woodstock',
+    showAnswer: false,
+    tags: ['Music', 'History'],
+    bookmarked: true,
+  },
+]
+
+const getCards = () => {
+  return cards
+}
+
+const bookmarkedCards = cards.filter(card => card.bookmarked)
+console.log(bookmarkedCards)
+
+// Section Variables
+
+const homeSection = document.getElementById('home')
+const bookmarkSection = document.getElementById('bookmark')
+
+// Render Function
+
+const renderCards = (arr, section) => {
+  section.innerHTML = ''
+  arr.forEach(card => {
+    const cardSection = document.createElement('section')
+    cardSection.classList.add('card')
+    console.log(cardSection)
+    const bookmarKButton = document.createElement('button')
+    bookmarKButton.classList.add('card__bookmark')
+    if (card.bookmarked) {
+      bookmarKButton.classList.add('card__bookmark--active')
+    } else {
+      bookmarKButton.classList.add('card__bookmark--inactive')
+    }
+
+    const question = document.createElement('h2')
+    question.classList.add('card__question')
+
+    const answerButton = document.createElement('button')
+    answerButton.classList.add('card__button')
+    answerButton.innerText = 'Show Answer'
+
+    const answer = document.createElement('p')
+    answer.classList.add('card__answer', 'card__answer--hidden')
+    answer.innerText = card.answer
+    const tagList = document.createElement('ul')
+    tagList.classList.add('tags')
+    console.log(card.tags)
+    card.tags.forEach(tag => {
+      const tagsItem = document.createElement('li')
+      tagsItem.classList.add('tags__item')
+      tagsItem.innerText = tag
+      tagList.appendChild(tagsItem)
+    })
+
+    cardSection.appendChild(bookmarKButton)
+    cardSection.appendChild(question)
+    cardSection.appendChild(answerButton)
+    cardSection.appendChild(answer)
+    cardSection.appendChild(tagList)
+    section.appendChild(cardSection)
+
+    question.innerText = card.question
+  })
+}
+// Render Functions
+
+document.body.onload = renderCards(cards, homeSection)
+document.body.onload = renderCards(bookmarkedCards, bookmarkSection)
+
+// Card Bookmarks
+
 const bookmarks = getElAll('.card__bookmark')
-//console.log(bookmarks)
 
 // Answerbuttons
 const answerButtons = getElAll('.card__button')
